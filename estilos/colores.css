@@ -1,0 +1,17 @@
+body{
+    background-color:#F5FF90;
+}
+
+.navbar{
+    height: 100px;
+}
+.navbar-nav{
+    text-align: center;
+}
+#cajaInput{
+    margin:2em;
+}
+#texto{
+    width: 300px;
+}
+
