@@ -2,6 +2,7 @@ var centesimas = 0;
 var segundos = 0;
 var minutos = 0;
 var horas = 0;
+var vueltastotales = 0;
 function inicio () {
 	control = setInterval(cronometro,10);
 	document.getElementById("inicio").disabled = true;
@@ -14,7 +15,8 @@ function inicio () {
 function parar () {
 	clearInterval(control);
 	document.getElementById("parar").disabled = true;
-	document.getElementById("continuar").disabled = false;
+    document.getElementById("continuar").disabled = false;
+    document.getElementById("limpiavuelta").disabled = true;
 }
 function reinicio () {
 	clearInterval(control);
@@ -31,6 +33,8 @@ function reinicio () {
 	document.getElementById("continuar").disabled = true;
     document.getElementById("reinicio").disabled = true;
     document.getElementById("vuelta").disabled = true;
+    document.getElementById("limpiavuelta").disabled = true;
+    limpiavueltas();
 }
 function cronometro () {
 	if (centesimas < 99) {
@@ -65,11 +69,12 @@ function cronometro () {
 }
 
 function vuelta(){
-    var vuelta = 1;
-    document.getElementById("escribevuelta").innerHTML +="Vuelta "+vuelta +"= "+ horas+" : "+ + minutos+" : "+ segundos+" : "+centesimas + "<br>";
-    vuelta++;
+    vueltastotales++;
+    document.getElementById("escribevuelta").innerHTML +="Vuelta "+vueltastotales +" =>   "+ horas+" : "+ + minutos+" : "+ segundos+" : "+centesimas + "<br>";
+    
 }
 
 function limpiavueltas(){
+document.getElementById("escribevuelta").innerHTML = " ";
 
 }
