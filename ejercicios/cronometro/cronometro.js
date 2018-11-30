@@ -23,7 +23,8 @@ function reinicio () {
 	centesimas = 0;
 	segundos = 0;
 	minutos = 0;
-	horas = 0;
+    horas = 0;
+    vueltastotales = 0;
 	Centesimas.innerHTML = ":00";
 	Segundos.innerHTML = ":00";
 	Minutos.innerHTML = ":00";
