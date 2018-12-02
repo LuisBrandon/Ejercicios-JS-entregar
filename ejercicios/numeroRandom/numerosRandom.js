@@ -1,5 +1,7 @@
 
 var numRandom = Math.floor(Math.random() * 101);
+var aux = 1;
+var intentos = 1;
 
 console.log(numRandom);
 
@@ -10,33 +12,38 @@ function CheckNumber(value) {
         document.getElementById("infoParrafo").innerHTML = "Woops... introduce de nuevo el número!";
     }
     else {
+
         userNumber = value;
-        userNumber = parseInt(userNumber);
-        console.log(typeof userNumber);
+        userNumber = parseInt(userNumber);        
+        CompruebaGanador(userNumber);
+        CompruebaNumero(userNumber);
+        intentos++;
+          
+    }
 
-        if (userNumber == numRandom) {
-            document.getElementById("infoParrafo").innerHTML = "¡Enhorabuena, has acertado el número!";
-        }        
-        else if (userNumber < numRandom) {
-            var intervalo = userNumber;
-            if(intervalo == numRandom){
-            var intervalo = userNumber;
-            document.getElementById("infoParrafo").innerHTML = "Mi número está entre el " + intervalo + " y el 100";
-
-        }else{
-            var intervalo = userNumber;
-            document.getElementById("infoParrafo").innerHTML = "Mi número está entre el " + intervalo + " y el 100";
-        }        
-        } else if(userNumber > numRandom){
-            var intervalo = 1;            
-            document.getElementById("infoParrafo").innerHTML = "Mi número está entre el " + userNumber + " y el " + userNumber;
+    function CompruebaGanador(userNumber){
+        if(userNumber == numRandom){
+            document.getElementById("infoParrafo").innerHTML = "¡Enhorabuena, has acertado el número! Has necesitado " + intentos + " intentos";
+            document.getElementById('buttonNumber').disabled = true;
         }
     }
 
-   
+    function CompruebaNumero(userNumber){        
+        
 
-    
+        if(userNumber < numRandom){
+            
+            var izquierda = parseInt(userNumber);
+            document.getElementById("infoParrafo").innerHTML = "Mi número está entre " + izquierda + " y " + 100;   
 
+        }
+
+        if(userNumber > numRandom){
+
+            var derecha = parseInt(userNumber);
+            document.getElementById("infoParrafo").innerHTML = "Mi número está entre " + 1 + " y " +derecha;
+                      
+        }
+    }
 }
 
-//document.getElementById("infoParrafo").innerHTML = "Mi número está entre el 1 y el";

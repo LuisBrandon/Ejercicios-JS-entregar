@@ -14,13 +14,14 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="estilos/colores.css">
+    <link rel="stylesheet" href="../../estilos/colores.css">
+    <script src="minitest.js"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Brand -->
-        <a class="navbar-brand" href="index.html">Índice</a>
+        <a class="navbar-brand" href="../../index.html">Índice</a>
 
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -37,13 +38,35 @@
                     <a class="dropdown-item" href="ejercicios/numeroRandom/numeroRandom.html">Adivinar un número entre
                         el 1 y el 100</a>
                     <a class="dropdown-item" href="ejercicios/cronometro/cronometro.html">Cronómetro</a>
-                    <a class="dropdown-item" href="ejercicios/Mini test/test.html">Mini test(WIP)</a>
+                    <a class="dropdown-item" href="#">Mini test(WIP)</a>
                     <a class="dropdown-item" href="#">Ahorcado (WIP)</a>
                     <a class="dropdown-item" href="ejercicios/Palindromo/ejercicio9palindromo.html">Palíndromo</a>
                 </div>
             </li>
         </ul>
     </nav>
+
+    <div style="width:800px; margin:0 auto;">
+    <h2>Pregunta 1.-¿Cómo se seleccionan todos los elementos de un tabla?</h2>
+    -Usando *. <input type="checkbox" name="pregunta1" id="pregunta1"> <br>
+    -Usando solamente from.<input type="checkbox" name="pregunta1"> <br>
+    -Se selecciona todo automáticamente.<input type="checkbox" name="pregunta1"> <br>
+    <h2>Pregunta 2.-¿Es posible combinar dos tablas para hacer consultas?</h2>
+    -No, es imposible dada su complejidad. <input type="radio" name="pregunta2"> <br>
+    -Si, es posible usando "join".<input type="radio" name="pregunta2"> <br>
+    -No.<input type="radio" name="pregunta2"> <br>
+    <h2>Pregunta 3.-¿Qué usamos para ordenar una consulta en SQL?</h2>
+    <select name="pregunta3" id="pregunta3">
+        <option value="0">----------------</option>
+        <option value="1">ORDER BY</option>
+        <option value="2">SORT BY</option>
+        <option value="3">ORD BY</option>
+    </select>
+    <h2 id="pregunta4">Pregunta 4.-Escribe la consulta para ver los nombres de la tabla usuario.</h2>
+    <textarea name="areapregunta" id="areapregunta" cols="30" rows="5"> </textarea> <br>
+
+    <input type="button" onlick="CompruebaFormulario()" value="Enviar respuestas">
+    </div>
 
 </body>
 
